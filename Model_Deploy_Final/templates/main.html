@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPS Score Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="text" name="category" placeholder="Category (0:LAT, 1: NON LAT)" required="required" />
+        <input type="text" name="city" placeholder="City(0-15 )" required="required" />
+        <input type="text" name="academy" placeholder="Academy (Input 0-10)" required="required" />
+        <input type="text" name="training_type" placeholder="Training Type (0:Internal, 1:Eksternal)" required="required" />
+        <input type="text" name="provider_category" placeholder="Provider Category (0:Eksternal, 1:Internal)" required="required" />
+
+        <p>{{ prediction_text }}</p>
+        <button type="submit">Predict</button>
+
+    </form>
+
+</body>
+</html>
